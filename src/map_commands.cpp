@@ -1,10 +1,11 @@
-#include <iostream>
-#include <vector>
-#include <string>
+#include "map_commands.h"
 
-using namespace std;
+void cmd_echo (const vector<string>& args) 
+{
+	cout << "facha";
+}
 
-extern string command;
-extern vector<string> args;
-
-void cmd_echo (const vector<string>& args) {cout << "facha";}
+void cmd_echo2(const vector<string>& args)
+{
+	cout << "pracuje";
+}
