@@ -41,7 +41,6 @@ static vector<string> tokenize_input(const string& input_shell)
 
 int main()
 {
-    // 🔴 REQUIRED INITIALIZATION
     startDispatching();
 
     const string device = "esko@eskotop";
