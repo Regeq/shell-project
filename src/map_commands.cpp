@@ -1,21 +1,15 @@
 #include "map_commands.h"
 
-void cmd_echo (const vector<string>& args) 
-{
-	for (int i = 0; i < args.size(); i++)
-	{
-		if (args[i] == "\n") 
-		{
-			cout << endl; 
-		} else 
-		{ 
-			cout << args[i]; 
-		}
+#include <iostream>
 
-	}
+void cmd_echo(const std::vector<std::string>& args)
+{
+    for (const auto& arg : args)
+        std::cout << arg << ' ';
+    std::cout << std::endl;
 }
 
-void cmd_echo2(const vector<string>& args)
+void cmd_echo2(const std::vector<std::string>&)
 {
-	cout << "pracuje";
+    std::cout << "pracuje" << std::endl;
 }

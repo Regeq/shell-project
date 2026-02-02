@@ -1,8 +1,10 @@
-#include <unordered_map>
-#include "map_commands.h"
+#pragma once
 
-using namespace std;
-using SCommand = void(*)(const vector<string>&);
+#include <string>
+#include <vector>
+
+using SCommand = void(*)(const std::vector<std::string>&);
 
 void startDispatching();
-void dispatch(string command, vector<string> args);
+void dispatch(const std::string& command,
+              const std::vector<std::string>& args);
