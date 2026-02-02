@@ -10,7 +10,6 @@ void startDispatching()
 {
     command_map.clear();
     command_map["echo"]  = &cmd_echo;
-    command_map["echo2"] = &cmd_echo2;
 }
 
 void dispatch(const std::string& command,

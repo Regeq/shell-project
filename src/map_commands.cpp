@@ -9,7 +9,3 @@ void cmd_echo(const std::vector<std::string>& args)
     std::cout << std::endl;
 }
 
-void cmd_echo2(const std::vector<std::string>&)
-{
-    std::cout << "pracuje" << std::endl;
-}
