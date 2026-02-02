@@ -4,7 +4,9 @@
 #include <unordered_map>
 #include <iostream>
 
-static std::unordered_map<std::string, SCommand> command_map;
+using namespace std;
+
+static unordered_map<string, SCommand> command_map;
 
 void startDispatching()
 {
@@ -12,13 +14,13 @@ void startDispatching()
     command_map["echo"]  = &cmd_echo;
 }
 
-void dispatch(const std::string& command,
-              const std::vector<std::string>& args)
+void dispatch(const string& command,
+              const vector<string>& args)
 {
     auto it = command_map.find(command);
     if (it == command_map.end())
     {
-        std::cerr << "Unknown command: " << command << std::endl;
+        cerr << "Unknown command: " << command << endl;
         return;
     }
 
