@@ -15,5 +15,6 @@ void cmd_echo(const vector<string>& args)
             cout << args[i] << ' ';
         }
     }
+    cout << endl << endl;
 }
 
