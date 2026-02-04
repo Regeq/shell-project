@@ -3,5 +3,4 @@
 *.obj
 *pdb
 build/
-CMakeLists.txt
 .vscode
