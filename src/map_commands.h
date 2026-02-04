@@ -4,3 +4,4 @@
 #include <string>
 
 void cmd_echo(const std::vector<std::string>& args);
+void cmd_coutfile(const std::vector<std::string>& args);

@@ -12,6 +12,7 @@ void startDispatching()
 {
     command_map.clear();
     command_map["echo"]  = &cmd_echo;
+    command_map["coutfile"]  = &cmd_coutfile;
 }
 
 void dispatch(const string& command,

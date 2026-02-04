@@ -18,3 +18,7 @@ void cmd_echo(const vector<string>& args)
     cout << endl << endl;
 }
 
+void cmd_coutfile(const vector<string>& args) 
+{
+    
+}
