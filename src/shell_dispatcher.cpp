@@ -1,25 +1,26 @@
 #include "shell_dispatcher.h"
-#include <unordered_map>
 #include <iostream>
 
-static std::unordered_map<std::string, SCommand> command_map;
+static std::unordered_map<std::string, Handler> command_map;
 
-void startDispatching()
+void startDispatching(Shell& shell)
 {
     command_map.clear();
-    command_map["echo"] = &Command::echo;
-    command_map["coutfile"] = &Command::coutfile;
+
+    // Command commands
+    command_map["echo"] = [&shell](const Args& a) { shell.cmd.echo(a); };
+    command_map["coutfile"] = [&shell](const Args& a) { shell.cmd.coutfile(a); };
+
+    // Game commands
+    command_map["russrou"] = [&shell](const Args& a) { shell.game.russrou(a); };
 }
 
-void dispatch(Command& cmd,
-              const std::string& command,
-              const std::vector<std::string>& args)
+void dispatch(const std::string& command, const Args& args)
 {
     auto it = command_map.find(command);
     if (it == command_map.end()) {
         std::cerr << "Unknown command: " << command << "\n";
         return;
     }
-
-    (cmd.*(it->second))(args);
+    it->second(args);
 }

@@ -1,12 +1,18 @@
 #pragma once
+#include <functional>
+#include <string>
+#include <unordered_map>
+#include <vector>
 
 #include "map_commands.h"
 
-#include <string>
-#include <vector>
+using Args = std::vector<std::string>;
+using Handler = std::function<void(const Args&)>;
 
-using SCommand = void (Command::*)(const std::vector<std::string>&);
+struct Shell {
+    Command cmd;
+    Game game;
+};
 
-void startDispatching();
-void dispatch(const std::string& command,
-              const std::vector<std::string>& args);
+void startDispatching(Shell& shell);
+void dispatch(const std::string& command, const Args& args);

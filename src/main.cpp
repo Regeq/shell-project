@@ -41,7 +41,8 @@ static vector<string> tokenize_input(const string& input_shell)
 
 int main()
 {
-    startDispatching();
+    Shell shell;
+    startDispatching(shell);
 
     const string device = "esko@eskotop";
     const string shell_symbol = " >>";
