@@ -11,8 +11,8 @@ static unordered_map<string, SCommand> command_map;
 void startDispatching()
 {
     command_map.clear();
-    command_map["echo"]  = &cmd_echo;
-    command_map["coutfile"]  = &cmd_coutfile;
+    command_map["echo"]  = &Command::echo;
+    command_map["coutfile"]  = &Command::coutfile;
 }
 
 void dispatch(const string& command,

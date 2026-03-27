@@ -1,11 +1,11 @@
 #include "map_commands.h"
 
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
-void cmd_echo(const vector<string>& args)
-{
+void Command::echo(const vector<string>& args) {
     for (int i = 0; i < args.size(); i++)
     {
         if (args[i] == "\\n") {
@@ -18,7 +18,8 @@ void cmd_echo(const vector<string>& args)
     cout << endl << endl;
 }
 
-void cmd_coutfile(const vector<string>& args) 
-{
-    
+void Command::coutfile(const vector<string>& args) {
+    for (int i = 0; i < args.size(); i++) {
+
+    }
 }

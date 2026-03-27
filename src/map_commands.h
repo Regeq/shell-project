@@ -3,5 +3,13 @@
 #include <vector>
 #include <string>
 
-void cmd_echo(const std::vector<std::string>& args);
-void cmd_coutfile(const std::vector<std::string>& args);
+class Command {
+public:
+    void echo(const std::vector<std::string>& args);
+    void coutfile(const std::vector<std::string>& args);
+};
+
+class Game {
+public:
+    void russrou(const std::vector<std::string>& args);
+};
