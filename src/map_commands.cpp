@@ -6,6 +6,12 @@
 
 using namespace std;
 
+/*
+
+ Games
+
+ */
+
 void Command::echo(const vector<string>& args) {
     for (int i = 0; i < args.size(); i++)
     {
@@ -24,6 +30,12 @@ void Command::coutfile(const vector<string>& args) {
 
     }
 }
+
+/*
+
+ Games
+
+ */
 
 void Game::russrou(const vector<string>& args)
 {
