@@ -5,5 +5,5 @@
 
 class Game_methods {
     public:
-    bool in_vector(std::vector<int>& vector, int number);
+    bool in_vector(const std::vector<int>& v, int number);
 };
