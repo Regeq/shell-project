@@ -7,6 +7,7 @@
 
 using namespace std;
 
+Game_methods gm;
 /*
 
  Commands
@@ -61,10 +62,11 @@ void Game::russrou(const vector<string>& args)
         }
     }
 
-    for (int i = 0; i <= bullet_count; i++) {
-        rr_temp = rand() % chamber_count;
-
-        bullet_pos.push_back(rr_temp);
+    while ((int)bullet_pos.size() < bullet_count) {
+        int rr_temp = rand() % chamber_count; // 0..chamber_count-1
+        if (!gm.in_vector(bullet_pos, rr_temp)) {
+            bullet_pos.push_back(rr_temp);
+        }
     }
 
     for (int i = 0; i < chamber_count; i++) {
@@ -73,10 +75,10 @@ void Game::russrou(const vector<string>& args)
         cout << "\n";
 
         if (rr_answer == 'q') {
-            cout << "Pussy...";
+            cout << "Pussy...\n";
             break;
         } else {
-            if (in_vector()) {
+            if (gm.in_vector(bullet_pos, i)) {
                 cout << "You died.\n";
                 break;
             } else {
