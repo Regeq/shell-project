@@ -1,4 +1,5 @@
 #include "map_commands.h"
+#include "command_methods.h"
 
 #include <iostream>
 #include <fstream>
@@ -8,7 +9,7 @@ using namespace std;
 
 /*
 
- Games
+ Commands
 
  */
 
@@ -39,20 +40,34 @@ void Command::coutfile(const vector<string>& args) {
 
 void Game::russrou(const vector<string>& args)
 {
-    int arg_value;
+    int chamber_count, bullet_count, rr_temp;
+    vector<int> bullet_pos;
     char rr_answer;
+
     for (int i = 0; i < args.size(); i++) {
         if (args[i] == "-cc") {
-            arg_value = stoi(args[i + 1]);
+            chamber_count = stoi(args[i + 1]);
         }
-        /*if (args[i] == "-bc") {
-            arg_value = stoi(args[i + 1]);
-        }
-        */
     }
-    int bullet_pos = rand() % arg_value;
 
-    for (int i = 0; i < arg_value; i++) {
+    for (int i = 0; i < args.size(); i++) {
+        if (args[i] == "-bc") {
+            bullet_count = stoi(args[i + 1]);
+            if (bullet_count <= chamber_count) { break; }
+            else {
+                cout << "incorrect bullet count.";
+                break;
+            }
+        }
+    }
+
+    for (int i = 0; i <= bullet_count; i++) {
+        rr_temp = rand() % chamber_count;
+
+        bullet_pos.push_back(rr_temp);
+    }
+
+    for (int i = 0; i < chamber_count; i++) {
         cout << "Do you pull or chicken out (y/q): ";
         cin >> rr_answer;
         cout << "\n";
@@ -61,7 +76,7 @@ void Game::russrou(const vector<string>& args)
             cout << "Pussy...";
             break;
         } else {
-            if (i == bullet_pos) {
+            if (in_vector()) {
                 cout << "You died.\n";
                 break;
             } else {

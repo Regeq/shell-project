@@ -10,6 +10,8 @@ add_executable(MyProject
     src/main.cpp
     src/map_commands.cpp
     src/shell_dispatcher.cpp
+        src/command_methods.h
+        src/command_methods.cpp
 )
 
 target_include_directories(MyProject PRIVATE src)
