@@ -63,7 +63,7 @@ void Game::russrou(const vector<string>& args)
     }
 
     while ((int)bullet_pos.size() < bullet_count) {
-        int rr_temp = rand() % chamber_count; // 0..chamber_count-1
+        rr_temp = rand() % chamber_count;
         if (!gm.in_vector(bullet_pos, rr_temp)) {
             bullet_pos.push_back(rr_temp);
         }
@@ -85,5 +85,27 @@ void Game::russrou(const vector<string>& args)
                 cout << "You get to see the light of the day once again.\n";
             }
         }
+    }
+}
+
+void Game::diceroll(const vector<string>& args) {
+    int sides, count, num;
+
+    for (int i = 0; i < args.size(); i++) {
+        if (args[i] == "-s") {
+            sides = stoi(args[i + 1]);
+        }
+    }
+
+    for (int i = 0; i < args.size(); i++) {
+        if (args[i] == "-c") {
+            count = stoi(args[i + 1]);
+        }
+    }
+
+
+    for (int i = 0; i < count; i++) {
+        num = gm.random_number(1, sides);
+        cout << i+1 << ". dice rolled: " << num << endl;
     }
 }
