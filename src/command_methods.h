@@ -6,4 +6,6 @@
 class Game_methods {
     public:
     bool in_vector(const std::vector<int>& v, int number);
+
+    int random_number(int min, int max);
 };
