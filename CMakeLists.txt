@@ -12,6 +12,7 @@ add_executable(MyProject
     src/shell_dispatcher.cpp
         src/command_methods.h
         src/command_methods.cpp
+        assets/include/json.hpp
 )
 
 target_include_directories(MyProject PRIVATE src)
