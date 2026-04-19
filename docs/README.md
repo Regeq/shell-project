@@ -1,5 +1,7 @@
-# Terminal Simulator
+# DND tool v1
 
-This is only a simulator that has currently 0 directory access. 
+This is a CLI-based tool for character data management.
 
-It has currently one working tool (echo), one work in progress tool and two game tools.
+## What does it offer?
+This tool offers versatility through using SQLite database for storing character, inventory and stats data.
+
