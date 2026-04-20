@@ -7,11 +7,6 @@ void startDispatching(Shell& shell)
 {
     command_map.clear();
 
-    // Command commands
-    command_map["echo"] = [&shell](const Args& a) { shell.cmd.echo(a); };
-    command_map["coutfile"] = [&shell](const Args& a) { shell.cmd.coutfile(a); };
-
-    // Game commands
     command_map["russrou"] = [&shell](const Args& a) { shell.game.russrou(a); };
     command_map["diceroll"] = [&shell](const Args& a) { shell.game.diceroll(a); };
 }

@@ -8,36 +8,6 @@
 using namespace std;
 
 Game_methods gm;
-/*
-
- Commands
-
- */
-
-void Command::echo(const vector<string>& args) {
-    for (int i = 0; i < args.size(); i++)
-    {
-        if (args[i] == "\\n") {
-            cout << endl;
-        }
-        else {
-            cout << args[i] << ' ';
-        }
-    }
-    cout << endl;
-}
-
-void Command::coutfile(const vector<string>& args) {
-    for (int i = 0; i < args.size(); i++) {
-
-    }
-}
-
-/*
-
- Games
-
- */
 
 void Game::russrou(const vector<string>& args)
 {

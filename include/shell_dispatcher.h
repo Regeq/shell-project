@@ -10,7 +10,6 @@ using Args = std::vector<std::string>;
 using Handler = std::function<void(const Args&)>;
 
 struct Shell {
-    Command cmd;
     Game game;
 };
 
