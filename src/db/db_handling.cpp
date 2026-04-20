@@ -2,6 +2,9 @@
 
 class Database {
     public:
+    void load() {
+        sqlite3_exec();
+    }
     void save() {
         sqlite3_exec();
     }

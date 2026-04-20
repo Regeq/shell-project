@@ -10,6 +10,8 @@ add_executable(MyProject
         include/db/db_handling.h
         ${CMAKE_SOURCE_DIR}/include/sqlite/sqlite3.c
         src/db/db_handling.cpp
+        include/db/db_support.h
+        src/db/db_support.cpp
 )
 
 target_include_directories(MyProject PRIVATE

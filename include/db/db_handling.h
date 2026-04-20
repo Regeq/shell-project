@@ -4,5 +4,6 @@
 
 class db_handling {
     public:
+    void load();
     void save();
 };
