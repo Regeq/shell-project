@@ -1,5 +1,5 @@
 #include "map_commands.h"
-#include "command_methods.h"
+#include "../include/command_methods.h"
 
 #include <iostream>
 #include <fstream>

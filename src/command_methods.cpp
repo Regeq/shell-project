@@ -1,4 +1,4 @@
-#include "command_methods.h"
+#include "../include/command_methods.h"
 #include <random>
 
 using namespace std;
