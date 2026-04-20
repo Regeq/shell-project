@@ -1,18 +1,19 @@
-cmake_minimum_required(VERSION 3.20)
-
-project(MyProject LANGUAGES CXX)
-
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
+cmake_minimum_required(VERSION 4.1)
 
 add_executable(MyProject
-    src/main.cpp
-    src/map_commands.cpp
-    src/shell_dispatcher.cpp
-        src/command_methods.h
+        src/main.cpp
+        src/map_commands.cpp
+        src/shell_dispatcher.cpp
+        include/command_methods.h
         src/command_methods.cpp
-        assets/include/json.hpp
+        src/db/db_handling.cpp
+        include/db/db_handling.h
+        ${CMAKE_SOURCE_DIR}/include/sqlite/sqlite3.c
+        src/db/db_handling.cpp
 )
 
-target_include_directories(MyProject PRIVATE src)
+target_include_directories(MyProject PRIVATE
+        src
+        ${CMAKE_SOURCE_DIR}/include/sqlite
+        ${CMAKE_SOURCE_DIR}/include
+)
