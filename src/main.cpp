@@ -3,7 +3,6 @@
 #include <vector>
 
 #include "../include/shell_dispatcher.h"
-#include "db/db_support.h"
 
 using namespace std;
 
@@ -51,8 +50,6 @@ int main()
 
     while (true)
     {
-        getCharacters();
-
         cout << "\033[36m" << device
              << "\033[31m" << " ~/" << dir
              << "\033[35m" << shell_symbol
