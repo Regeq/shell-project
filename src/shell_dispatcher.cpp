@@ -9,6 +9,7 @@ void startDispatching(Shell& shell)
 
     command_map["russrou"] = [&shell](const Args& a) { shell.game.russrou(a); };
     command_map["diceroll"] = [&shell](const Args& a) { shell.game.diceroll(a); };
+    command_map["cointoss"] = [&shell](const Args& a) { shell.game.diceroll(a); };
 }
 
 void dispatch(const std::string& command, const Args& args)

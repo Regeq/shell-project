@@ -79,3 +79,11 @@ void Game::diceroll(const vector<string>& args) {
         cout << i+1 << ". dice rolled: " << num << endl;
     }
 }
+
+void Game::cointoss() {
+    int rnum;
+
+    rnum = gm.random_number(1,2);
+
+    cout << rnum << endl;
+}
