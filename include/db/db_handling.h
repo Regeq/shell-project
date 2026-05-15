@@ -4,8 +4,13 @@
 
 #include "sqlite3.h"
 
-class db_handling {
-    public:
+class Database {
+public:
+    void open(std::string db_name);
     void save(std::string db_name);
     void load();
+
+private:
+    sqlite3 *DB;
+    int exit = 0;
 };
