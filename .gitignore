@@ -2,4 +2,10 @@
 *.ilk
 *.obj
 *.pdb
+
 build/
+.cache/
+
+compile_commands.json
+
+.clangd

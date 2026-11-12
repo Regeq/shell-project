@@ -1,10 +1,10 @@
+#include <cctype>
+#include <format>
 #include <iostream>
 #include <string>
 #include <vector>
-#include <format>
 
 #include "../include/shell_dispatcher.h"
-#include "db/db_handling.h"
 
 #define CYAN "\033[36m"
 #define RED "\033[31m"
@@ -49,28 +49,27 @@ static vector<string> tokenize_input(const string& input_shell)
 int main()
 {
     Shell shell;
-    Database db;
     startDispatching(shell);
 
     const string currentCharacter = "NULL";
-    const string shell_symbol = " >>";
-    string input_shell, command;
-    int hp = NULL, lvl = NULL;
+    const string shellSymbol = " >>";
+    string inputShell, command;
+    int hp = 0, lvl = 0;
 
     while (true)
     {
-        cout << CYAN << currentCharacter
-             << RED << format(" [{} HP | LVL {}]", hp, lvl)
-             << PURPLE << shell_symbol
-             << RESET;
+        cout << format("{}{}{}[{} HP | LVL {}]{}{}{}",
+                    CYAN, currentCharacter,
+                    RED, hp, lvl,
+                    PURPLE, shellSymbol, RESET);
 
-        getline(cin, input_shell);
+        getline(cin, inputShell);
 
-        if (input_shell == "exit")
+        if (inputShell == "exit")
             //  db.save();
             break;
 
-        auto tokens = tokenize_input(input_shell);
+        auto tokens = tokenize_input(inputShell);
         if (tokens.empty())
             continue;
 
