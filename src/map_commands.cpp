@@ -14,10 +14,12 @@ void Game::russrou(const vector<string>& args)
     int chamber_count, bullet_count, rr_temp;
     vector<int> bullet_pos;
     char rr_answer;
+    bool cc_FlagPresent = false, bc_FlagPresent = false;
 
     for (int i = 0; i < args.size(); i++) {
         if (args[i] == "-cc") {
             chamber_count = stoi(args[i + 1]);
+            cc_FlagPresent = true;
         }
     }
 
@@ -29,6 +31,7 @@ void Game::russrou(const vector<string>& args)
                 cout << "incorrect bullet count.";
                 break;
             }
+            bc_FlagPresent = true;
         }
     }
 
@@ -40,6 +43,16 @@ void Game::russrou(const vector<string>& args)
     }
 
     for (int i = 0; i < chamber_count; i++) {
+        if (!cc_FlagPresent || !bc_FlagPresent) {
+            if (!cc_FlagPresent) {
+                cout << " -bc flag missing! Please specify the chamber count with the -cc flag.\n"; 
+            }
+            if (!bc_FlagPresent) {
+                cout << " -bc flag missing! Please specify the bullet count with the -bc flag.\n";
+            }
+            break;
+        }
+
         cout << "Do you pull or chicken out (y/q): ";
         cin >> rr_answer;
         cout << "\n";

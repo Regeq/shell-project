@@ -14,7 +14,7 @@
 using namespace std;
 
 // Tokenizes input
-static vector<string> tokenize_input(const string& input_shell)
+static vector<string> tokenizeInput(const string& input_shell)
 {
     vector<string> tokenized_shell_input;
     string token_build;
@@ -58,7 +58,7 @@ int main()
 
     while (true)
     {
-        cout << format("{}{}{}[{} HP | LVL {}]{}{}{}",
+        cout << format("{}{} {}[{} HP | LVL {}] {}{}{} ",
                     CYAN, currentCharacter,
                     RED, hp, lvl,
                     PURPLE, shellSymbol, RESET);
@@ -69,7 +69,7 @@ int main()
             //  db.save();
             break;
 
-        auto tokens = tokenize_input(inputShell);
+        auto tokens = tokenizeInput(inputShell);
         if (tokens.empty())
             continue;
 
